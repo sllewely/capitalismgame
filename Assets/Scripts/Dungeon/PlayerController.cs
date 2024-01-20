@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
     {
         float x_axis = Input.GetAxis("Horizontal") * speed;
         float y_axis = Input.GetAxis("Vertical") * speed;
-        Debug.Log(x_axis);
-        Debug.Log(y_axis);
 
         if (Mathf.Abs(x_axis) > Mathf.Abs(y_axis))
         {

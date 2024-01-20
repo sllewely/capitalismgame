@@ -21,7 +21,6 @@ public class PickupableBehavior : MonoBehaviour
         // Check if collided with player
         if (other.name != "Player")
         {
-            Debug.Log("collided with " + other.name);
             return;
         }
 
