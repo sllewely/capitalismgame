@@ -20,8 +20,9 @@ public class Monster : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
             Debug.Log("shep is ded!");
+            Destroy(gameObject);
+            //Instantiate();
         }
         immuneForSeconds -= Time.deltaTime;
     }
