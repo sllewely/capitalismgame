@@ -21,14 +21,10 @@ public class Monster : MonoBehaviour
     {
         if (health <= 0)
         {
-<<<<<<< Updated upstream
-            Destroy(gameObject);
-            Debug.Log("shep is ded!");
-=======
+
             Debug.Log("shep is ded!");
             Instantiate(dropItem, transform.position + Vector3.up*1.0f, Quaternion.identity);
             Destroy(gameObject);
->>>>>>> Stashed changes
         }
         else
         {
