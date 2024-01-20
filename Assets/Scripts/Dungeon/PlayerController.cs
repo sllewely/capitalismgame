@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 500.0f;
 
     private CharacterController characterController;
+    private Animator weaponAnimator;
+    private GameObject weapon;
 
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        weapon = transform.Find("Weapon").gameObject;
+        weaponAnimator = weapon.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float x_axis = Input.GetAxis("Horizontal") * speed;
-        float y_axis = Input.GetAxis("Vertical") * speed;
-        Debug.Log(x_axis);
-        Debug.Log(y_axis);
+        // Movement
+        float x_axis = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float y_axis = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         if (Mathf.Abs(x_axis) > Mathf.Abs(y_axis))
         {
@@ -45,5 +48,10 @@ public class PlayerController : MonoBehaviour
             }
         }
         characterController.Move(new Vector3(x_axis, 0.0f, y_axis));
+
+        // Attack
+        if (Input.GetKeyDown(KeyCode.J)) {
+            weaponAnimator.Play("Base Layer.Attack1");
+        }
     }
 }
