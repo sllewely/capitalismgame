@@ -119,75 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &29077749 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4903047382888120697, guid: fd839e16ef4c243d7b197937f92c7ddb, type: 3}
-  m_PrefabInstance: {fileID: 739888844715550550}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &29077751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29077749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76de35550b91e4e5292016e4bb02b863, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  immuneSecondsOnHit: 0.3
---- !u!136 &29077752
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29077749}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.1679573
-  m_Height: 2.3544588
-  m_Direction: 1
-  m_Center: {x: -0.2522564, y: 1.0400877, z: 0.32008803}
---- !u!54 &29077753
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29077749}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &39700083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3849,10 +3780,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3439690153049433625, guid: fd839e16ef4c243d7b197937f92c7ddb, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4903047382888120697, guid: fd839e16ef4c243d7b197937f92c7ddb, type: 3}
       propertyPath: m_Name
       value: Shep
@@ -3864,16 +3791,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4903047382888120697, guid: fd839e16ef4c243d7b197937f92c7ddb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 29077751}
-    - targetCorrespondingSourceObject: {fileID: 4903047382888120697, guid: fd839e16ef4c243d7b197937f92c7ddb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 29077752}
-    - targetCorrespondingSourceObject: {fileID: 4903047382888120697, guid: fd839e16ef4c243d7b197937f92c7ddb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 29077753}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd839e16ef4c243d7b197937f92c7ddb, type: 3}
 --- !u!1001 &6639900795684038346
 PrefabInstance:
@@ -3979,10 +3897,6 @@ PrefabInstance:
     - target: {fileID: 1795596130387217983, guid: e7eece2e5087941e394293a3d6b0f0ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638672259648641415, guid: e7eece2e5087941e394293a3d6b0f0ca, type: 3}
-      propertyPath: m_TagString
-      value: weapon
       objectReference: {fileID: 0}
     - target: {fileID: 6925926167023840894, guid: e7eece2e5087941e394293a3d6b0f0ca, type: 3}
       propertyPath: m_Name
