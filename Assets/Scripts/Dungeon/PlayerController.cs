@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Movement
-        float x_axis = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float y_axis = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        float x_axis = Input.GetAxis("Horizontal") * speed;
+        float y_axis = Input.GetAxis("Vertical") * speed;
 
         if (Mathf.Abs(x_axis) > Mathf.Abs(y_axis))
         {

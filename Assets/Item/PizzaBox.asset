@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 1
   itemName: Pizza Box
   value: 20
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7391fd6fd124c4a72a40fa65e20cd595, type: 3}
