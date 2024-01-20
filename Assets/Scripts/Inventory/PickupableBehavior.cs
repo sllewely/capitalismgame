@@ -5,16 +5,14 @@ using UnityEngine.TextCore.Text;
 
 public class PickupableBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public Item item;
+
+
+    void Pickup()
     {
-        
+        InventoryManager.Instance.Add(item);
+        Destroy(gameObject);
     }
     
     // On collision with the player, I get picked up
@@ -28,5 +26,6 @@ public class PickupableBehavior : MonoBehaviour
         }
 
         // Add to inventory.
+        Pickup();
     }
 }
