@@ -19,7 +19,7 @@ public class PickupableBehavior : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check if collided with player
-        if (other.name != "Player")
+        if (other.tag != "player")
         {
             return;
         }
