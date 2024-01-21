@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7118747962414867549}
-  - component: {fileID: 7301071014407939393}
   - component: {fileID: 1273719168027431537}
   m_Layer: 0
   m_Name: InventoryManager
@@ -33,19 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7301071014407939393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3349079711647346965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a122dc2a0624b4e2f9ad3f866ec24efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemInfo: {fileID: 0}
 --- !u!114 &1273719168027431537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,3 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  gold: 0
+  itemContent: {fileID: 0}
+  inventoryItem: {fileID: 3597162586347050100, guid: eaa02b306725141cab05b7b19e6ecfd5, type: 3}

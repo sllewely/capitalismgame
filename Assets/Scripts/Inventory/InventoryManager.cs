@@ -4,11 +4,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour, IDataPersistence
 {
 
     public static InventoryManager Instance;
     public List<Item> items = new List<Item>();
+    public int gold = 0;
 
     public Transform itemContent;
     public GameObject inventoryItem;
@@ -38,6 +39,23 @@ public class InventoryManager : MonoBehaviour
     {
         items.Remove(item);
 
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+        gameData.gold = gold;
+        gameData.items = items;
+
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        gold = gameData.gold;
+
+        foreach (var item in gameData.items)
+        {
+            Add(item);
+        }
     }
     
 
