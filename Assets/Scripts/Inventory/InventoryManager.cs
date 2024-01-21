@@ -19,20 +19,33 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         Instance = this;
     }
 
+    void Start()
+    {
+        // preload existing items
+        for (int i = 0; i < items.Count; i++)
+        {
+            InsertItem(items[i]);
+        }
+
+    }
+
     public void Add(Item item)
     {
         items.Add(item);
-        
+        InsertItem(item);
+    }
+
+    void InsertItem(Item item)
+    {
         // Instantiate inventoryItem
         GameObject obj = Instantiate(inventoryItem, itemContent);
         var itemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
         var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
-            
+
         // Update from scriptableObject
         obj.GetComponent<InventoryItem>().itemInfo = item;
         itemName.text = item.itemName;
         itemIcon.sprite = item.icon;
-        
     }
 
     public void Remove(Item item)
