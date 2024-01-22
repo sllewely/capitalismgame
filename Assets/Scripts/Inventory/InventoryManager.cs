@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
 
     public Transform itemContent;
     public GameObject inventoryItem;
+    public StoreManager storeManager;
 
     private void Awake()
     {
@@ -22,9 +23,9 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
     void Start()
     {
         // preload existing items
-        for (int i = 0; i < items.Count; i++)
+        foreach (var item in items)
         {
-            InsertItem(items[i]);
+            InsertItem(item);
         }
 
     }
@@ -46,6 +47,11 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         obj.GetComponent<InventoryItem>().itemInfo = item;
         itemName.text = item.itemName;
         itemIcon.sprite = item.icon;
+
+        if (storeManager != null)
+        {
+            obj.GetComponent<Button>().onClick.AddListener(delegate { storeManager.SelectItem(item); });
+        }
     }
 
     public void Remove(Item item)

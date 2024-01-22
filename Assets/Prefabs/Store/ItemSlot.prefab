@@ -196,3 +196,5 @@ MonoBehaviour:
   inventory: {fileID: 0}
   stockedItem: {fileID: 0}
   stockItemPrefab: {fileID: 5612745457677209840, guid: 936cf329d09fe44f9ba94cd0873937a1, type: 3}
+  selectedItem: {fileID: 0}
+  storeManager: {fileID: 0}
