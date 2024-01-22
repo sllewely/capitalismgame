@@ -4,47 +4,27 @@ using UnityEngine;
 
 public class ItemDisplayController : MonoBehaviour
 {
-    public GameObject inventory;
-
+    // state
     public Item stockedItem;
+
+    // references
+    public GameObject inventory;
     public StockItemDisplay stockItemPrefab;
+    public InventoryManager invManager;
 
-    public StoreManager storeManager;
-
-    // Start is called before the first frame update
+    // event functions
     void Start()
     {
-        if (stockedItem != null)
-        {
-            RenderItemSprite();
-        }
-    }
-
-    
-    public void StockItem(Item item)
-    {
-        stockedItem = item;
-        RenderItemSprite();
-        storeManager.ClearSelectedItem();
-        inventory.SetActive(false);
-    }
-
-    void RenderItemSprite()
-    {
-        Vector2 adjustedPosition = new Vector2(transform.position.x, transform.position.y + 0.07f);
-        StockItemDisplay createdItem = Instantiate(stockItemPrefab, adjustedPosition, transform.rotation);
-        createdItem.data = stockedItem;
-        createdItem.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        if (stockedItem != null) RenderItemSprite();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (stockedItem == null && storeManager.selectedItem != null)
+        if (stockedItem == null && invManager.selectedItem != null)
         {
-            StockItem(storeManager.selectedItem);
+            StockItem(invManager.selectedItem);
         }
     }
-
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -56,11 +36,28 @@ public class ItemDisplayController : MonoBehaviour
         toggleMenu(false);
     }
 
-    void toggleMenu (bool state)
+    // actions
+    public void StockItem(Item item)
     {
-        if (stockedItem == null)
-        {
-            inventory.SetActive(state);
-        }
+        stockedItem = item;
+        RenderItemSprite();
+        invManager.selectedItem = null;
+        invManager.Remove(item);
+        toggleMenu(false, false);
+    }
+
+    void RenderItemSprite()
+    {
+        Vector2 adjustedPosition = new Vector2(transform.position.x, transform.position.y + 0.07f);
+        StockItemDisplay createdItem = Instantiate(stockItemPrefab, adjustedPosition, transform.rotation);
+        createdItem.data = stockedItem;
+        createdItem.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        createdItem.transform.SetParent(this.GetComponent<ItemDisplayController>().gameObject.transform) ;
+    }
+
+    void toggleMenu (bool state, bool checkItem = true)
+    {
+        if (checkItem && stockedItem != null) return;
+        inventory.SetActive(state);
     }
 }

@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
 
     public Transform itemContent;
     public GameObject inventoryItem;
-    public StoreManager storeManager;
+    public Item selectedItem;
 
     private void Awake()
     {
@@ -22,7 +22,6 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
 
     void Start()
     {
-        // preload existing items
         foreach (var item in items)
         {
             InsertItem(item);
@@ -45,19 +44,17 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
 
         // Update from scriptableObject
         obj.GetComponent<InventoryItem>().itemInfo = item;
+        obj.GetComponent<InventoryItem>().name = item.itemName;
         itemName.text = item.itemName;
         itemIcon.sprite = item.icon;
-
-        if (storeManager != null)
-        {
-            obj.GetComponent<Button>().onClick.AddListener(delegate { storeManager.SelectItem(item); });
-        }
+        obj.GetComponent<Button>().onClick.AddListener(() => this.selectedItem = item);
     }
 
     public void Remove(Item item)
     {
         items.Remove(item);
-
+        // note: v1 just destroy first matching item since we don't have stacks!
+        Destroy(itemContent.transform.Find(item.itemName).gameObject);
     }
 
     public void SaveData(ref GameData gameData)
