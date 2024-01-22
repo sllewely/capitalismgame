@@ -1,20 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScenesManager : MonoBehaviour
 {
     
-    
-    // Start is called before the first frame update
-    void Start()
+    public static ScenesManager Instance;
+
+    // Must be in the same order as in Build Settings
+    public enum Scene
     {
-        
+        MainMenu,
+        Dungeon1,
+        AlyciaScene,
+    }
+    
+    private void Awake()
+    {
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadScene(Scene scene)
     {
-        
+        SceneManager.LoadScene(scene.ToString());
+    }
+
+    public void LoadNewGame()
+    {
+        SceneManager.LoadScene(Scene.Dungeon1.ToString());
+    }
+
+    public void LoadTestGame()
+    {
+        SceneManager.LoadScene(Scene.AlyciaScene.ToString());
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(Scene.MainMenu.ToString());
     }
 }
