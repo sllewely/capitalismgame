@@ -76,6 +76,6 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
             Add(item);
         }
     }
-    
+
 
 }
