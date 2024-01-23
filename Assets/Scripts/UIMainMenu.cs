@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class UIMainMenu : MonoBehaviour
 {
     [SerializeField] private Button newGame;
+    public Button loadGame;
+    public Button LoadTestGame;
     
     // Start is called before the first frame update
     void Start()
