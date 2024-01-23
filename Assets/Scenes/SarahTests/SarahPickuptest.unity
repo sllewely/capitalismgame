@@ -4173,7 +4173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a122dc2a0624b4e2f9ad3f866ec24efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInfo: {fileID: 0}
 --- !u!114 &2145127448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4187,6 +4186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  gold: 0
   itemContent: {fileID: 1546860149}
   inventoryItem: {fileID: 3597162586347050100, guid: eaa02b306725141cab05b7b19e6ecfd5, type: 3}
 --- !u!1001 &2145565039
@@ -4429,6 +4429,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1831200466232086713, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3234483956368335266, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -4512,6 +4516,10 @@ PrefabInstance:
     - target: {fileID: 3661210101331594830, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890023738950281139, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5335158530660173878, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
       propertyPath: m_SizeDelta.y

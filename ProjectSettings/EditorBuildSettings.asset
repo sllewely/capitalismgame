@@ -4,5 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 6ba0e97c6b95c0748b0f7e8b345f4005
+  - enabled: 1
+    path: Assets/Scenes/Dungeon1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/AlyciaScene.unity
+    guid: 81759ff3bdc1e46efa22300902c4aa50
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
