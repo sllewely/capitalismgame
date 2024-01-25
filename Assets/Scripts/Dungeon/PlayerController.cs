@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput = Vector2.zero;
     private Vector3 directionInput = Vector2.zero;
 
+    private float smoothTime = 0.05f;
+    private float currentVelocity;
+
 
     private void Awake()
     {
@@ -83,8 +86,9 @@ public class PlayerController : MonoBehaviour
             weaponAnimator.Play("Base Layer.Attack1");
         }
 
-        var rotation = Mathf.Atan2(directionInput.x, directionInput.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, rotation, 0);
+        var targetAngle = Mathf.Atan2(directionInput.x, directionInput.y) * Mathf.Rad2Deg;
+        var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref currentVelocity, smoothTime);
+        transform.rotation = Quaternion.Euler(0, angle, 0);
         
         Debug.Log("move is " + (speed * new Vector3(moveInput.x, 0.0f, moveInput.y)));
         characterController.Move(speed * new Vector3(moveInput.x, 0.0f, moveInput.y) * Time.deltaTime);
