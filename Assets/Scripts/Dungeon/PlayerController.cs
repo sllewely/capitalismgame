@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
         weaponAnimator = weapon.GetComponent<Animator>();
         input.Player.Movement.performed += moving =>
         {
-            Debug.Log("move");
             moveInput = moving.ReadValue<Vector2>();
             directionInput = moving.ReadValue<Vector2>();
         };
