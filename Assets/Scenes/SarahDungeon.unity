@@ -1438,6 +1438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f30dd6a76e5eab4b98ad440c430afc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 882560865}
 --- !u!1001 &882560863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1449,6 +1450,10 @@ PrefabInstance:
     - target: {fileID: 1831200466232086713, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831200466232086713, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3661210101331594830, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
       propertyPath: m_Pivot.x
@@ -1500,15 +1505,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3661210101331594830, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3661210101331594830, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3661210101331594830, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3661210101331594830, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1570,6 +1575,11 @@ PrefabInstance:
 --- !u!224 &882560864 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3661210101331594830, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
+  m_PrefabInstance: {fileID: 882560863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &882560865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6757680417546341070, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
   m_PrefabInstance: {fileID: 882560863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &892950062
