@@ -317,6 +317,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4617988644118833485, guid: 82a2d4fcab2601e4ab795129f6ede9cb, type: 3}
   m_PrefabInstance: {fileID: 59724067}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &152234438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152234439}
+  - component: {fileID: 152234440}
+  m_Layer: 0
+  m_Name: DataPersistenceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &152234439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152234438}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1792346793}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &152234440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152234438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45a6d7ae684f4fd78d31e193293ff51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: savegame
 --- !u!1001 &162998461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1714,7 +1759,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3661210101331594830, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1625066765}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1831200466232086713, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1782897145}
   m_SourcePrefab: {fileID: 100100000, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
 --- !u!224 &882560864 stripped
 RectTransform:
@@ -2133,7 +2181,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 973969868}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1782897145}
+        m_TargetAssemblyTypeName: GameMenuUIBehavior, Assembly-CSharp
+        m_MethodName: OnExitGameButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &973969868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3634,7 +3694,6 @@ GameObject:
   - component: {fileID: 1625066765}
   - component: {fileID: 1625066767}
   - component: {fileID: 1625066766}
-  - component: {fileID: 1625066768}
   m_Layer: 5
   m_Name: GameMenuUI
   m_TagString: Untagged
@@ -3700,18 +3759,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625066764}
   m_CullTransparentMesh: 1
---- !u!114 &1625066768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625066764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdba2fcae1b3a8c46bd8015b3d4bd986, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1631770146
 GameObject:
   m_ObjectHideFlags: 0
@@ -4149,6 +4196,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4617988644118833485, guid: 82a2d4fcab2601e4ab795129f6ede9cb, type: 3}
   m_PrefabInstance: {fileID: 1778722425}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1782897141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1831200466232086713, guid: fca56a5edb53a42e899716a8c9f92fea, type: 3}
+  m_PrefabInstance: {fileID: 882560863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1782897145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782897141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66050df7ad5cdfb40aefe03a61b8ad10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMenuUI: {fileID: 1625066764}
 --- !u!1 &1792346792
 GameObject:
   m_ObjectHideFlags: 0
@@ -4180,6 +4245,7 @@ Transform:
   m_Children:
   - {fileID: 385949651}
   - {fileID: 864684170}
+  - {fileID: 152234439}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1795213020
@@ -4412,7 +4478,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1931574424}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1782897145}
+        m_TargetAssemblyTypeName: GameMenuUIBehavior, Assembly-CSharp
+        m_MethodName: OnSaveGameButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1931574424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5187,7 +5265,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2135885489}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1782897145}
+        m_TargetAssemblyTypeName: GameMenuUIBehavior, Assembly-CSharp
+        m_MethodName: OnLoadGameButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2135885489
 MonoBehaviour:
   m_ObjectHideFlags: 0
