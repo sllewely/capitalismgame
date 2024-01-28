@@ -15,4 +15,9 @@ public class GameMenuBehavior : MonoBehaviour
     {
         
     }
+
+    public void OnSaveGameButton()
+    {
+        
+    }
 }
