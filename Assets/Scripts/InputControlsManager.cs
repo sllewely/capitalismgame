@@ -8,6 +8,7 @@ public class InputControlsManager : MonoBehaviour
     private InputControls input = null;
 
     public GameObject inventoryUI;
+    public GameObject gameMenuUI;
     
     private void Awake()
     {
@@ -28,7 +29,17 @@ public class InputControlsManager : MonoBehaviour
             var isInventoryOpen = inventoryUI.activeSelf;
             inventoryUI.SetActive(!isInventoryOpen);
         };
-        
+
+        if (gameMenuUI == null)
+        {
+            Debug.LogError("InputControlsManager missing gameMenuUI");
+        }
+        input.Player.OpenMainMenu.performed += pressed =>
+        {
+            var isGameMenuOpen = gameMenuUI.activeSelf;
+            gameMenuUI.SetActive(!isGameMenuOpen);
+        };
+
     }
 
     // Update is called once per frame
