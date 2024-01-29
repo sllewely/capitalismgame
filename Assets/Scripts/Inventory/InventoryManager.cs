@@ -14,10 +14,14 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
     public Transform itemContent;
     public GameObject inventoryItem;
     public Item selectedItem;
+    
+    private InputControls input = null;
 
     private void Awake()
     {
         Instance = this;
+        input = new InputControls();
+        input.Enable();
     }
 
     void Start()
@@ -26,6 +30,11 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         {
             InsertItem(item);
         }
+
+        input.Player.OpenInventory.performed += pressed =>
+        {
+
+        };
 
     }
 
