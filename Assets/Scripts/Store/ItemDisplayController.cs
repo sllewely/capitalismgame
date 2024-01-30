@@ -46,6 +46,13 @@ public class ItemDisplayController : MonoBehaviour
         toggleMenu(false, false);
     }
 
+    public void SellItem()
+    {
+        invManager.gold += stockedItem.value;
+        stockedItem = null;
+        Destroy(this.transform.GetChild(0).gameObject);
+    }
+
     void RenderItemSprite()
     {
         Vector2 adjustedPosition = new Vector2(transform.position.x, transform.position.y + 0.07f);
