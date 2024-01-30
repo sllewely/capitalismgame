@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 0.1f;
+    public float gravity = -10f;
 
     private CharacterController characterController;
     private Animator playerAnimator;
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, angle, 0);
 
         // Move
+        moveInput.Normalize();
         if (moveInput.magnitude > 0)
         {
             playerAnimator.SetBool("IsRunning", true);
@@ -72,6 +74,9 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetBool("IsRunning", false);
         }
+
+        // Gravity Movement
+        characterController.Move(new Vector3(0, gravity, 0) * Time.deltaTime);
     }
 
     private void OnMovementPerformed(InputAction.CallbackContext value)
