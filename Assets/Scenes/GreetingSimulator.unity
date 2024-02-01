@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c29dce891901e242b3dd6064cea898a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueUI: {fileID: 0}
+  dialogueUI: {fileID: 361254277}
   characterName: {fileID: 1440476617}
   dialogueText: {fileID: 2084549514}
 --- !u!1001 &385949650

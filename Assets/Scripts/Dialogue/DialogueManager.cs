@@ -63,6 +63,10 @@ public class DialogueManager : MonoBehaviour
             if (convoIndex < dialogueLines.Count)
             {
                 SetDialogue();
+            } else if (convoIndex == dialogueLines.Count)
+            {
+                // SARAH: tbh instead should disable this whole convo script
+                dialogueUI.SetActive(false);
             }
         };
 
