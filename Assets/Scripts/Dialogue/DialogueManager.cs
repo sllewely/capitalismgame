@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class DialogueManager : MonoBehaviour
     private List<DialogueLineScriptableObject> dialogueLines;
     
     private int convoIndex = 0;
+
+    public TextMeshProUGUI characterName;
+    public TextMeshProUGUI dialogueText;
     
     
     // Sarah: need new action scheme for conversation
@@ -28,10 +33,21 @@ public class DialogueManager : MonoBehaviour
         
         dialogueLines = new List<DialogueLineScriptableObject>
         {
-            new DialogueLineScriptableObject(name: "Braid Woman", "Hello!"),
-            new DialogueLineScriptableObject(name: "Horn Woman", "Yello!"),
-            new DialogueLineScriptableObject(name: "Braid Woman", "Jello!"),
+            new DialogueLineScriptableObject(characterName: "Braid Woman", "Hello!"),
+            new DialogueLineScriptableObject(characterName: "Horn Woman", "Yello!"),
+            new DialogueLineScriptableObject(characterName: "Braid Woman", "Jello!"),
         };
+
+        if (characterName == null)
+        {
+            Debug.LogError("CharacterName text ui missing");
+        }
+        if (dialogueText == null)
+        {
+            Debug.LogError("dialogueText text ui missing");
+        }
+
+        SetDialogue();
     }
 
     // Start is called before the first frame update
@@ -44,9 +60,22 @@ public class DialogueManager : MonoBehaviour
 
         input.Dialogue.Continue.performed += pressed =>
         {
-            // Load next Dialogue
+            if (convoIndex < dialogueLines.Count)
+            {
+                SetDialogue();
+            }
         };
 
+    }
+
+    void SetDialogue()
+    {
+        var dialogue = dialogueLines[convoIndex];
+        characterName.text = dialogue.characterName;
+        dialogueText.text = dialogue.dialogue;
+        
+
+        convoIndex++;
     }
     
     

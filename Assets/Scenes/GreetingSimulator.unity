@@ -364,6 +364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
+  characterName: {fileID: 1440476617}
+  dialogueText: {fileID: 2084549514}
 --- !u!1001 &385949650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -795,11 +797,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1935173743}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!4 &859455929 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2273556025551274692, guid: e7eece2e5087941e394293a3d6b0f0ca, type: 3}
-  m_PrefabInstance: {fileID: 6846374037728737031}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &864684169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d3fdeb3f8ad5f4da386a8aff6ede3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 859455929}
+  target: {fileID: 0}
   offset: {x: 0, y: 20, z: -17}
 --- !u!1 &973969865
 GameObject:
@@ -2043,7 +2040,7 @@ GameObject:
   - component: {fileID: 1807633056}
   - component: {fileID: 1807633055}
   m_Layer: 5
-  m_Name: Image
+  m_Name: RightCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,9 +14,9 @@ public class DialogueLineScriptableObject : ScriptableObject
 
     public Action<GameObject> action;
 
-    public DialogueLineScriptableObject(string name, string dialogue)
+    public DialogueLineScriptableObject(string characterName, string dialogue)
     {
-        this.name = name;
+        this.characterName = characterName;
         this.dialogue = dialogue;
     }
 
