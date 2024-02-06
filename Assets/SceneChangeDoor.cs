@@ -28,10 +28,10 @@ public class SceneChangeDoor : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         Debug.Log($"Door interaction zone entered by {other.name}");
-        if (other.gameObject == player)
+        if (other.tag == "player")
         {
             playerInInteractionArea = true;
         }
@@ -39,7 +39,7 @@ public class SceneChangeDoor : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Debug.Log($"Door interaction zone exited by {other.name}");
-        if (other.gameObject == player)
+        if (other.tag == "player")
         {
             playerInInteractionArea = false;
 
