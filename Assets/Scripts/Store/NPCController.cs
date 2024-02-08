@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-    public float speed = 0.5f;
     public ItemDisplayController targetItem;
     public GameObject spawnPoint;
 
@@ -39,7 +38,7 @@ public class NPCController : MonoBehaviour
     {
         Vector3 direction = endLocation.transform.position - transform.position;
         direction.Normalize();
-        rb.MovePosition(transform.position + direction * speed * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + direction * 0.5f * Time.fixedDeltaTime);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
