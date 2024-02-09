@@ -11,6 +11,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
     public List<Item> items = new List<Item>();
     public int gold = 0;
 
+    // The content pane in InventoryUI
     public Transform itemContent;
     public GameObject inventoryItem;
     public Item selectedItem;
@@ -22,6 +23,11 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         Instance = this;
         input = new InputControls();
         input.Enable();
+
+        if (itemContent == null)
+        {
+            Debug.LogError("inventoryContent missing");
+        }
     }
 
     void Start()
