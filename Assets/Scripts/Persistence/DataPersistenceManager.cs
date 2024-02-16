@@ -35,7 +35,9 @@ public class DataPersistenceManager : MonoBehaviour
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         // LoadGame();
-        Debug.Log("Saved in: " + Application.persistentDataPath.ToString());
+        // Debug.Log("Saved in: " + Application.persistentDataPath.ToString());
+        Debug.Log("Begin from new game state");
+        NewGame();
     }
 
     public void NewGame()
@@ -64,6 +66,7 @@ public class DataPersistenceManager : MonoBehaviour
         
     }
 
+    // Saves game to a file.
     public void SaveGame()
     {
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
@@ -72,6 +75,15 @@ public class DataPersistenceManager : MonoBehaviour
         }
         
         dataHandler.Save(gameData);
+    }
+
+    // Does not save game to file.  Used for persisting state between scenes.
+    public void TempSaveGame()
+    {
+        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        {
+            dataPersistenceObj.SaveData(ref gameData);
+        }
     }
 
     // public void OnApplicationQuit()
