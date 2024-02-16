@@ -47,7 +47,7 @@ public class DialogueManager : MonoBehaviour
             Debug.LogError("dialogueText text ui missing");
         }
 
-        SetDialogue();
+        NextDialogueLine();
     }
 
     // Start is called before the first frame update
@@ -60,26 +60,31 @@ public class DialogueManager : MonoBehaviour
 
         input.Dialogue.Continue.performed += pressed =>
         {
-            if (convoIndex < dialogueLines.Count)
-            {
-                SetDialogue();
-            } else if (convoIndex == dialogueLines.Count)
-            {
-                // SARAH: tbh instead should disable this whole convo script
-                dialogueUI.SetActive(false);
-            }
+            NextDialogueLine();
         };
-
     }
 
-    void SetDialogue()
+    public void NextDialogueLine()
     {
-        var dialogue = dialogueLines[convoIndex];
+        if (convoIndex < dialogueLines.Count)
+        {
+            var dialogue = dialogueLines[convoIndex];
+            SetDialogue(dialogue);
+            convoIndex++;
+        }
+        else
+        {
+            // SARAH: tbh instead should disable this whole convo script
+            dialogueUI.SetActive(false);
+        }
+
+        
+    }
+    
+    void SetDialogue(DialogueLineScriptableObject dialogue)
+    {
         characterName.text = dialogue.characterName;
         dialogueText.text = dialogue.dialogue;
-        
-
-        convoIndex++;
     }
     
     
