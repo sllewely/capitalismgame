@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-
+    public static DialogueManager Instance;
     public GameObject dialogueUI;
     private InputControls input = null;
 
@@ -28,15 +28,11 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+        
+        // SARAH: input controls should be instance?  Or like by type?
         input = new InputControls();
         input.Enable();
-        
-        dialogueLines = new List<DialogueLineScriptableObject>
-        {
-            new DialogueLineScriptableObject(characterName: "Braid Woman", "Hello!"),
-            new DialogueLineScriptableObject(characterName: "Horn Woman", "Yello!"),
-            new DialogueLineScriptableObject(characterName: "Braid Woman", "Jello!"),
-        };
 
         if (characterName == null)
         {
@@ -62,6 +58,12 @@ public class DialogueManager : MonoBehaviour
         {
             NextDialogueLine();
         };
+    }
+
+    public void LoadDialogue(List<DialogueLineScriptableObject> lines)
+    {
+        dialogueUI.SetActive(true);
+        this.dialogueLines = lines;
     }
 
     public void NextDialogueLine()
