@@ -3559,8 +3559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 188227183}
-  interactionArea: {fileID: 1779891211}
-  targetScene: AlyciaScene
+  targetScene: Town
 --- !u!114 &1779891216
 MonoBehaviour:
   m_ObjectHideFlags: 0
