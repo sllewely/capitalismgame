@@ -9,11 +9,26 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 6ba0e97c6b95c0748b0f7e8b345f4005
   - enabled: 1
-    path: Assets/Scenes/Dungeon1.unity
+    path: Assets/Scenes/Dungeon1WithDoor.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/AlyciaScene.unity
     guid: 81759ff3bdc1e46efa22300902c4aa50
+  - enabled: 1
+    path: Assets/Scenes/Dungeon1.unity
+    guid: e183249727f0b4347b22fd843bda3df4
+  - enabled: 1
+    path: Assets/Scenes/Dungeon1WithHud.unity
+    guid: ff9c15b15899dd54ba93a8f7a771f06f
+  - enabled: 1
+    path: Assets/Scenes/GreetingSimulator.unity
+    guid: d0e450b7e21ff4d47854d2be04095084
+  - enabled: 1
+    path: Assets/Scenes/SarahDungeon.unity
+    guid: 3f331d4c87117ab488c877d4f2f41d68
+  - enabled: 1
+    path: Assets/Scenes/Town.unity
+    guid: e7e812f809c8e3a4db8fc7682e703ab3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: babc78db619aefd4a934860c060bfc9d, type: 2}
   m_UseUCBPForAssetBundles: 0
